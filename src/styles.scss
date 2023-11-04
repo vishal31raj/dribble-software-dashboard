@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #007bff;
+}
+
+body {
+    background-color: #ececec;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+.font-f1 {
+    font-size: 18px;
+}
+
+.font-f2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.font-f3 {
+    font-size: 30px;
+    font-weight: 600;
+}

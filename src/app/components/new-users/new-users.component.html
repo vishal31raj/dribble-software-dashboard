@@ -1,0 +1,47 @@
+<p class="font-f3">New User Registrations</p>
+
+<div *ngIf="newUsersData">
+  <div class="user-item" *ngFor="let item of newUsersData; let i = index">
+    <div class="img-div">
+      <img
+        [src]="'https://i.pravatar.cc/150?img=' + i"
+        height="100%"
+        width="100%"
+        alt=""
+      />
+    </div>
+    <div>
+      <p class="m-0 font-f2">{{ item.name }}</p>
+      <p class="m-0 font-f1">{{ item.country }}</p>
+    </div>
+    <div></div>
+    <div style="margin-left: auto; display: flex; align-items: center">
+      <div
+        class="progress"
+        role="progressbar"
+        aria-label="Example with label"
+        aria-valuenow="item.progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        style="height: 12px"
+      >
+        <div
+          class="progress-bar bg-success"
+          [ngStyle]="{ width: item.progress + '%' }"
+        >
+          {{ item.progress }}%
+        </div>
+      </div>
+
+      <button
+        class="btn btn-sm"
+        [ngClass]="{
+          'btn-primary': i === 0,
+          'btn-secondary': i !== 0
+        }"
+      >
+        More
+      </button>
+    </div>
+  </div>
+</div>

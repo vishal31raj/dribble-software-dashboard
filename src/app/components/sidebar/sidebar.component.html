@@ -1,0 +1,11 @@
+<div class="my-4">
+  <div
+    class="nav-item"
+    [ngClass]="{
+      active: item.isActive === true
+    }"
+    *ngFor="let item of navIcons"
+  >
+    <i class="fa" [ngClass]="item.icon" aria-hidden="true"></i>
+  </div>
+</div>

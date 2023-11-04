@@ -1,0 +1,37 @@
+<div style="display: flex">
+  <div class="toggler">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <div class="actions">
+    <div class="search">
+      <i class="fa fa-search" aria-hidden="true"></i> &nbsp;
+      <span class="font-f1">Search</span>
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <span class="font-f1">ENG</span> &nbsp;
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </div>
+      <div class="nav-item">
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+      </div>
+      <div class="nav-item">
+        <i class="fa fa-bell-o" aria-hidden="true"></i>
+      </div>
+      <div class="nav-item profile">
+        <div class="img-div">
+          <img
+            src="{{ userInfo.imageUrl }}"
+            alt=""
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div>
+          <span class="font-f1">{{ userInfo.name }}</span> &nbsp;
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

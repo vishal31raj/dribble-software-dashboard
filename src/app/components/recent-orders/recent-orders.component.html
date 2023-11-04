@@ -1,0 +1,80 @@
+<p class="font-f3">Recent Order</p>
+
+<table class="table font-f1" *ngIf="recentOrdersData">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Customer</th>
+      <th scope="col">Products</th>
+      <th scope="col">Delivery Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Tracking No#</th>
+      <th scope="col">Shipping</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of recentOrdersData; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ order.name }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.delivery_date | date }}</td>
+      <td>
+        <span
+          class="status-label"
+          [ngClass]="
+            order.status === 'Paid'
+              ? 'paid'
+              : order.status === 'Failed'
+              ? 'failed'
+              : order.status === 'Pending'
+              ? 'pending'
+              : ''
+          "
+        >
+          {{ order.status }}
+        </span>
+      </td>
+      <td>{{ order.tracking_no }}</td>
+      <td>{{ order.shipping === true ? "Yes" : "No" }}</td>
+      <td
+        (click)="onShowOrderDetails(order.id)"
+        data-bs-toggle="modal"
+        data-bs-target="#orderDetailsModal"
+      >
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Order Details Modal -->
+<div
+  class="modal fade"
+  id="orderDetailsModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" *ngIf="selectedOrder">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Order details</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p class="m-0 font-f2">
+          {{ selectedOrder.name }}
+        </p>
+        <p class="m-0 font-f1">
+          {{ selectedOrder.product }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

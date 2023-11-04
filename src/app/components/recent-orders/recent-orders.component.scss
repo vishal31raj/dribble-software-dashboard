@@ -1,0 +1,21 @@
+.table {
+  .status-label {
+    font-size: 14px;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+  }
+  .status-label.paid {
+    background-color: green;
+  }
+  .status-label.pending {
+    background-color: gray;
+  }
+  .status-label.failed {
+    background-color: red;
+  }
+
+  .fa-times {
+    cursor: pointer;
+  }
+}

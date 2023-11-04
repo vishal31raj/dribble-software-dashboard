@@ -1,0 +1,23 @@
+<div class="row" *ngIf="topCardsData">
+  <div class="col-3" *ngFor="let card of topCardsData; let i = index">
+    <div
+      class="top-card"
+      [ngClass]="{
+        active: i === 0
+      }"
+    >
+      <div class="percentage-div">
+        <div class="card-value">{{ card.value }}%</div>
+        <div class="icon-div">
+          <div class="fa fa-music top-card-icon"></div>
+        </div>
+      </div>
+      <div class="card-header">
+        <span class="font-f2">{{ card.header }}</span>
+      </div>
+      <div class="card-description">
+        <span>{{ card.sub_header }}</span>
+      </div>
+    </div>
+  </div>
+</div>

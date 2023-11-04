@@ -1,0 +1,58 @@
+.top-card {
+  width: 100%;
+  padding: 15px 30px 25px 30px;
+  background-color: white;
+  border-radius: 5px;
+
+  .percentage-div {
+    display: flex;
+    align-items: center;
+
+    .card-value {
+      font-size: 50px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .icon-div {
+      margin-left: auto;
+
+      .top-card-icon {
+        font-size: 50px;
+        color: silver;
+      }
+    }
+  }
+
+  .card-header {
+    font-weight: 600;
+  }
+
+  .card-description {
+    font-size: 18px;
+    color: gray;
+  }
+}
+
+.top-card.active {
+  background-color: var(--primary-color);
+  color: white;
+
+  .percentage-div {
+    .card-value {
+      color: white;
+    }
+
+    .icon-div {
+      .top-card-icon {
+        color: white;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .card-description {
+    color: white;
+    opacity: 0.8;
+  }
+}
